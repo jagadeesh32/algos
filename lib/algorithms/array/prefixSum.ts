@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateRandomArray } from '@/lib/utils/random';
 
 const prefixSumRun = (arr: number[]): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -42,4 +43,6 @@ export const prefixSum: AlgorithmProfile = {
         space: 'O(1)', // In-place
     },
     run: prefixSumRun,
+    generateRandomInput: generateRandomArray,
 };
+

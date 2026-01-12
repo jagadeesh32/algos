@@ -17,12 +17,16 @@ export const Visualizer = memo(function Visualizer() {
         case 'Sorting':
         case 'Searching':
         case 'Array':
+        case 'StackQueue':
+        case 'String':
+        case 'BitManipulation':
             return <ArrayVisualizer />;
         case 'LinkedList':
             return <LinkedListVisualizer />;
         case 'Tree':
             return <TreeVisualizer />;
         case 'Graph':
+        case 'Greedy':
             return <GraphVisualizer />;
         case 'Backtracking':
         case 'DP':

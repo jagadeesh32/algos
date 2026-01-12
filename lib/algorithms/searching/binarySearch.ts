@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateSortedArray } from '@/lib/utils/random';
 
 const binarySearchRun = ({ array, target }: { array: number[], target: number }): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -17,7 +18,6 @@ const binarySearchRun = ({ array, target }: { array: number[], target: number })
             type: 'compare',
             description: `Checking middle index ${mid} (${array[mid]}). Range: [${low}, ${high}]`,
             highlightIndices: [low, high, mid], // maybe color mid differently
-            compareIndices: [mid],
         });
 
         if (array[mid] === target) {
@@ -65,4 +65,6 @@ export const binarySearch: AlgorithmProfile = {
         space: 'O(1)',
     },
     run: binarySearchRun as any,
+    generateRandomInput: generateSortedArray,
 };
+

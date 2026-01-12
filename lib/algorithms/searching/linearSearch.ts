@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateRandomArray } from '@/lib/utils/random';
 
 const linearSearchRun = ({ array, target }: { array: number[], target: number }): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -40,4 +41,6 @@ export const linearSearch: AlgorithmProfile = {
         space: 'O(1)',
     },
     run: linearSearchRun as any,
+    generateRandomInput: generateRandomArray,
 };
+

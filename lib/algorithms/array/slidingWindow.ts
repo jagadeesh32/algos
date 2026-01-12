@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateRandomArray } from '@/lib/utils/random';
 
 const slidingWindowRun = ({ array, target }: { array: number[], target: number }): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -78,4 +79,6 @@ export const slidingWindow: AlgorithmProfile = {
         space: 'O(1)',
     },
     run: slidingWindowRun as any,
+    generateRandomInput: generateRandomArray,
 };
+

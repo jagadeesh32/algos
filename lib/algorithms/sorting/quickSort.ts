@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep, SortAlgorithm } from '@/types/algorithm';
+import { generateRandomArray } from '@/lib/utils/random';
 
 const quickSortRun = (arr: number[]): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -90,4 +91,5 @@ export const quickSort: SortAlgorithm = {
         space: 'O(log n)',
     },
     run: quickSortRun,
+    generateRandomInput: generateRandomArray,
 };

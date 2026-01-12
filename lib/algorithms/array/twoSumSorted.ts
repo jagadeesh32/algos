@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateSortedArray } from '@/lib/utils/random';
 
 const twoSumSortedRun = ({ array, target }: { array: number[], target: number }): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -58,4 +59,6 @@ export const twoSumSorted: AlgorithmProfile = {
         space: 'O(1)',
     },
     run: twoSumSortedRun as any,
+    generateRandomInput: generateSortedArray,
 };
+

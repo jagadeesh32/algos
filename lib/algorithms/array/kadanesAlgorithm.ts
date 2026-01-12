@@ -1,4 +1,5 @@
 import { AlgorithmProfile, AnimationStep } from '@/types/algorithm';
+import { generateRandomArray } from '@/lib/utils/random';
 
 const kadanesRun = (arr: number[]): AnimationStep[] => {
     const steps: AnimationStep[] = [];
@@ -71,4 +72,6 @@ export const kadanesAlgo: AlgorithmProfile = {
         space: 'O(1)',
     },
     run: kadanesRun,
+    generateRandomInput: generateRandomArray,
 };
+
