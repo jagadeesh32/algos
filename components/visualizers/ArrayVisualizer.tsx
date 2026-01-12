@@ -7,16 +7,17 @@ export function ArrayVisualizer() {
     const { input, steps, currentStep } = useVisualizer();
 
     const currentArray = useMemo(() => {
-        // Input is usually number[] or string[]
-        if (!input || !Array.isArray(input)) return [];
+        // Input is usually number[] or string[].
+        // BUT for String match, input might be { text: string ... }.
+        let baseArr = [];
+        if (Array.isArray(input)) baseArr = [...input];
+        else if (input && input.text) baseArr = input.text.split('');
+        else return []; // Empty
 
         // Deep clone array to avoid specific mutations hitting state
-        const arr = [...input];
+        const arr = [...baseArr];
 
         // Replay steps up to currentStep
-        // This is O(Steps * ArraySize) in worst case (naive replay).
-        // For 100 algos visualization usually steps < 1000, array < 100.
-        // It's acceptable for client-side.
         if (currentStep !== -1) {
             for (let i = 0; i <= currentStep; i++) {
                 const step = steps[i];

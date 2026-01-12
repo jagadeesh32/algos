@@ -5,6 +5,8 @@ import { insertionSort } from './sorting/insertionSort';
 import { mergeSort } from './sorting/mergeSort';
 import { quickSort } from './sorting/quickSort';
 import { heapSort } from './sorting/heapSort';
+import { countingSort } from './sorting/countingSort';
+import { radixSort } from './sorting/radixSort';
 import { linearSearch } from './searching/linearSearch';
 import { binarySearch } from './searching/binarySearch';
 import { twoSumSorted } from './array/twoSumSorted';
@@ -27,27 +29,37 @@ import { nQueens } from './backtracking/nQueens';
 import { interpolationSearch } from './searching/interpolationSearch';
 import { dijkstra } from './graph/dijkstra';
 import { exponentialSearch } from './searching/exponentialSearch';
+import { ternarySearch } from './searching/ternarySearch';
 import { fibonacci } from './dp/fibonacci';
 import { lcs } from './dp/lcs';
 import { prims } from './greedy/prims';
+import { activitySelection } from './greedy/activitySelection';
 import { countingBits } from './bit/countingBits';
 import { longestPalindrome } from './string/longestPalindrome';
+import { sudokuSolver } from './backtracking/sudokuSolver';
+import { ratInMaze } from './backtracking/ratInMaze';
+import { wordSearch } from './backtracking/wordSearch';
+import { naiveStringMatch } from './string/naiveStringMatch';
+import { kmp } from './string/kmp';
 
 // Export a list of all algorithms
 export const algorithms: AlgorithmProfile[] = [
-    // Sorting (6)
+    // Sorting (8)
     bubbleSort,
     selectionSort,
     insertionSort,
     mergeSort,
     quickSort,
     heapSort,
-    // Searching (5)
+    countingSort,
+    radixSort,
+    // Searching (6)
     linearSearch,
     binarySearch,
     jumpSearch,
     interpolationSearch,
     exponentialSearch,
+    ternarySearch,
     // Array (4)
     twoSumSorted,
     slidingWindow,
@@ -69,15 +81,21 @@ export const algorithms: AlgorithmProfile[] = [
     bfs,
     dfs,
     dijkstra,
-    // Backtracking (1)
+    // Backtracking (4)
     nQueens,
+    sudokuSolver,
+    ratInMaze,
+    wordSearch,
     // DP (2)
     fibonacci,
     lcs,
-    // Greedy (1)
+    // Greedy (2)
     prims,
+    activitySelection,
     // Bit (1)
     countingBits,
-    // String (1)
+    // String (3)
     longestPalindrome,
+    naiveStringMatch,
+    kmp,
 ];
